@@ -1,0 +1,1 @@
+GET http://127.0.0.1:5001/tft-tracker-dev/us-central1/api/traits/randomize

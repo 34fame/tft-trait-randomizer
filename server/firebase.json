@@ -1,0 +1,14 @@
+{
+  "emulators": {
+    "functions": {
+      "host": "%local-ip-address%",
+      "port": 5001
+    },
+    "ui": {
+      "enabled": false
+    },
+    "firestore": {
+      "port": 8070
+    }
+  }
+}
