@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "tft-tracker-dev"
+    "default": "tft-tracker-dev",
+    "dev": "tft-tracker-dev"
   }
 }

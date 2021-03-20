@@ -1,6 +1,6 @@
 <template>
    <q-page class="flex flex-center my-page">
-      <div class="column items-center" style="width: 80%; max-width: 300px;">
+      <div class="column items-center" style="width: 80%; max-width: 300px">
          <q-btn
             push
             round
@@ -59,9 +59,7 @@ export default {
 
    methods: {
       async getRandomTrait() {
-         console.log(process.env.API_BASEURL)
          const result = await axios.get(`${process.env.API_BASEURL}/traits/randomize`)
-         console.log(result)
          if (result.status === 200) {
             this.trait = result.data
          }
