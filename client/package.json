@@ -10,7 +10,10 @@
       "serve:local": "cross-env QENV=local quasar dev",
       "serve:dev": "cross-env QENV=dev quasar dev",
       "serve:dev:ios": "cross-env QENV=dev quasar dev -m cordova -T ios",
+      "serve:dev:android": "cross-env QENV=dev quasar dev -m cordova -T android",
       "build": "cross-env QENV=dev quasar build",
+      "build:ios": "cross-env QENV=dev quasar build -m ios",
+      "build:android": "cross-env QENV=dev quasar build -m android",
       "deploy": "firebase deploy"
    },
    "dependencies": {

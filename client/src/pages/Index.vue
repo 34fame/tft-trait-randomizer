@@ -69,6 +69,9 @@ export default {
 </script>
 
 <style lang="sass" scoped>
+body.cordova
+  padding-top: constant(safe-area-inset-top)
+  padding-top: env(safe-area-inset-top)
 .my-page
    background-image: url('/tft1.jpg')
    background-position: center

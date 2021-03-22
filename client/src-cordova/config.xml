@@ -2,8 +2,8 @@
 <widget id="com.thirtyfourfame.tfttraitrandomizer" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>TFT Trait Randomizer</name>
     <description>Randomly determines what trait to play in Riot Games' Teamfight Tactics.</description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
-        Apache Cordova Team
+    <author email="troy@34fame.com" href="https://github.com/34fame">
+        34 Fame, LLC
     </author>
     <content src="index.html" />
     <access origin="*" />
@@ -73,4 +73,5 @@
     </platform>
     <allow-navigation href="about:*" />
     <preference name="SplashMaintainAspectRatio" value="true" />
+    <preference name="DisallowOverscroll" value="true" />
 </widget>
