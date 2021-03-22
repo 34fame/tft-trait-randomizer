@@ -7,7 +7,9 @@
    "private": true,
    "scripts": {
       "test": "echo \"No test specified\" && exit 0",
-      "serve": "cross-env QENV=local quasar dev",
+      "serve:local": "cross-env QENV=local quasar dev",
+      "serve:dev": "cross-env QENV=dev quasar dev",
+      "serve:dev:ios": "cross-env QENV=dev quasar dev -m cordova -T ios",
       "build": "cross-env QENV=dev quasar build",
       "deploy": "firebase deploy"
    },
