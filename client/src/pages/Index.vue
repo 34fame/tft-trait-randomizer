@@ -15,7 +15,7 @@
             <span class="text-h6">{{ $t('roll') }}</span>
          </q-btn>
 
-         <template v-if="trait.name">
+         <template v-if="trait.name || processing">
             <q-card class="q-mt-lg my-card" flat bordered>
                <q-card-section class="q-pa-sm bg-accent">
                   <div class="text-overline text-white">{{ trait.type }} type</div>
@@ -40,6 +40,7 @@
 </template>
 
 <script>
+import { Notify } from 'quasar'
 import { instance as axios } from 'boot/axios'
 
 export default {
@@ -48,6 +49,7 @@ export default {
    data() {
       return {
          trait: {},
+         processing: false,
       }
    },
 
@@ -59,9 +61,19 @@ export default {
 
    methods: {
       async getRandomTrait() {
-         const result = await axios.get(`${process.env.API_BASEURL}/traits/randomize`)
-         if (result.status === 200) {
-            this.trait = result.data
+         this.processing = true
+         try {
+            const result = await axios.get(`${process.env.API_BASEURL}/traits/randomize`)
+            if (result.status === 200) {
+               this.trait = result.data
+            }
+         } catch (error) {
+            Notify.create({
+               color: 'negative',
+               message: 'Oops... Something went wrong.  Try again?',
+            })
+         } finally {
+            this.processing = false
          }
       },
    },
@@ -73,7 +85,7 @@ body.cordova
   padding-top: constant(safe-area-inset-top)
   padding-top: env(safe-area-inset-top)
 .my-page
-   background-image: url('/tft1.jpg')
+   background-image: url('~assets/tft1.jpg')
    background-position: center
    background-size: cover
 .my-card
