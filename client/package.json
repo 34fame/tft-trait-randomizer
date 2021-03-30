@@ -1,6 +1,6 @@
 {
    "name": "tft-trait-randomizer",
-   "version": "0.0.4",
+   "version": "0.1.0",
    "description": "Randomly determines what trait to play in Riot Games' Teamfight Tactics.",
    "productName": "TFT Trait Randomizer",
    "author": "Troy Moreland <troy@morelands.net>",

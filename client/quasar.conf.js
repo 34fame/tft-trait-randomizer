@@ -81,7 +81,7 @@ module.exports = function (/* ctx */) {
       },
 
       cordova: {
-         noIosLegacyBuildFlag: true,
+         noIosLegacyBuildFlag: false,
       },
 
       capacitor: {
