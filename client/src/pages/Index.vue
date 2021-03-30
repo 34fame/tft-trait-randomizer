@@ -7,15 +7,16 @@
             class="shadow-8"
             color="primary"
             icon="casino"
+            :loading="processing"
             no-caps
             stack
             size="64px"
             @click="getRandomTrait"
-         >
-            <span class="text-h6">{{ $t('roll') }}</span>
-         </q-btn>
+         />
+         <!-- <span class="text-h6">{{ $t('roll') }}</span>
+         </q-btn> -->
 
-         <template v-if="trait.name || processing">
+         <template v-if="trait.name">
             <q-card class="q-mt-lg my-card" flat bordered>
                <q-card-section class="q-pa-sm bg-accent">
                   <div class="text-overline text-white">{{ trait.type }} type</div>
@@ -48,8 +49,8 @@ export default {
 
    data() {
       return {
-         trait: {},
          processing: false,
+         trait: {},
       }
    },
 
@@ -61,18 +62,27 @@ export default {
 
    methods: {
       async getRandomTrait() {
-         this.processing = true
          try {
-            const result = await axios.get(`${process.env.API_BASEURL}/traits/randomize`)
-            if (result.status === 200) {
-               this.trait = result.data
-            }
+            this.processing = true
+            this.trait = {}
+            setTimeout(async () => {
+               const result = await axios.get(
+                  `${process.env.API_BASEURL}/traits/randomize`
+               )
+               if (result.status === 200) {
+                  this.trait = result.data
+               }
+               this.processing = false
+            }, 2000)
+            // const result = await axios.get(`${process.env.API_BASEURL}/traits/randomize`)
+            // if (result.status === 200) {
+            //    this.trait = result.data
+            // }
          } catch (error) {
             Notify.create({
                color: 'negative',
                message: 'Oops... Something went wrong.  Try again?',
             })
-         } finally {
             this.processing = false
          }
       },
@@ -82,8 +92,11 @@ export default {
 
 <style lang="sass" scoped>
 body.cordova
-  padding-top: constant(safe-area-inset-top)
-  padding-top: env(safe-area-inset-top)
+   // padding-top: constant(safe-area-inset-top)
+   // padding-top: env(safe-area-inset-top)
+   // padding-bottom: constant(safe-area-inset-bottom)
+   // padding-bottom: env(safe-area-inset-bottom)
+
 .my-page
    background-image: url('~assets/tft1.jpg')
    background-position: center

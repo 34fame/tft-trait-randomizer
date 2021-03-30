@@ -1,6 +1,6 @@
 {
    "name": "tft-trait-randomizer",
-   "version": "0.0.2",
+   "version": "0.0.4",
    "description": "Randomly determines what trait to play in Riot Games' Teamfight Tactics.",
    "productName": "TFT Trait Randomizer",
    "author": "Troy Moreland <troy@morelands.net>",
@@ -12,7 +12,7 @@
       "serve:dev:ios": "cross-env QENV=dev quasar dev -m cordova -T ios",
       "serve:dev:android": "cross-env QENV=dev quasar dev -m cordova -T android",
       "build": "cross-env QENV=dev quasar build",
-      "build:ios": "cross-env QENV=dev quasar build -m ios",
+      "build:ios": "cross-env QENV=dev quasar build -m cordova -T ios --ide",
       "build:android": "cross-env QENV=dev quasar build -m android",
       "deploy": "firebase deploy"
    },

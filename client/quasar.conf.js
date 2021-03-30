@@ -1,4 +1,4 @@
-module.exports = function(/* ctx */) {
+module.exports = function (/* ctx */) {
    return {
       supportTS: false,
       boot: ['i18n', 'axios', 'loading', 'notify', 'storage'],
@@ -80,10 +80,12 @@ module.exports = function(/* ctx */) {
          },
       },
 
-      cordova: {},
+      cordova: {
+         noIosLegacyBuildFlag: true,
+      },
 
       capacitor: {
-         hideSplashscreen: true,
+         hideSplashscreen: false,
       },
 
       electron: {
