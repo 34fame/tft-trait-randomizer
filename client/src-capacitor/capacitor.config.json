@@ -1,7 +1,0 @@
-{
-  "appId": "com.thirtyfourfame.tfttraitrandomizer",
-  "appName": "TFT Trait Randomizer",
-  "bundledWebRuntime": false,
-  "npmClient": "yarn",
-  "webDir": "www"
-}
